@@ -1,0 +1,19 @@
+.content {
+    /*padding: 0px 22px;*/
+    /*padding: 0px;*/
+    padding: 22px 0px 0px 0px;
+    /*@apply min-w-0 min-h-screen bg-slate-100 flex-1  pb-10  relative dark:bg-darkmode-700;*/
+    @apply min-w-0 flex-1  pb-10  relative dark:bg-darkmode-700;
+    @include media-breakpoint-down(md) {
+        border-radius: 30px;
+        @apply px-4 max-w-full pt-0 mt-10;
+    }
+    &:before {
+        content: "";
+        @apply w-full h-px block;
+    }
+    &.content--top-nav {
+        border-radius: 35px 35px 0 0;
+        @apply pt-0 mt-5;
+    }
+}

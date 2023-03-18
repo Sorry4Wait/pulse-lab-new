@@ -1,0 +1,113 @@
+<template>
+  <div class="otchots">
+    <!-- <p class="title">{{$t("methodManLong")}}</p> -->
+    <div class="otchots my__container">
+      <h3>{{ $t("methodManLong") }}</h3>
+      <div class="courses">
+        <component :is="currentCourse"></component>
+      </div>
+      <a href="#!" class="download">
+        <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M26.2502 21.6667C26.2502 20.9763 25.6905 20.4167 25.0002 20.4167H15.0002C14.3098 20.4167 13.7502 20.9763 13.7502 21.6667C13.7502 22.357 14.3098 22.9167 15.0002 22.9167H25.0002C25.6905 22.9167 26.2502 22.357 26.2502 21.6667Z"
+              fill="#041628"
+            />
+            <path
+              d="M26.2502 28.3333C26.2502 27.643 25.6905 27.0833 25.0002 27.0833H15.0002C14.3098 27.0833 13.7502 27.643 13.7502 28.3333C13.7502 29.0237 14.3098 29.5833 15.0002 29.5833H25.0002C25.6905 29.5833 26.2502 29.0237 26.2502 28.3333Z"
+              fill="#041628"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M11.6668 3.75C9.13552 3.75 7.0835 5.80203 7.0835 8.33333V31.6667C7.0835 34.198 9.13552 36.25 11.6668 36.25H28.3335C30.8648 36.25 32.9168 34.198 32.9168 31.6667V13.2794C32.9168 12.6448 32.7098 12.0275 32.3273 11.5212L27.331 4.9084C26.7797 4.17883 25.9183 3.75 25.0039 3.75H11.6668ZM9.5835 8.33333C9.5835 7.18274 10.5162 6.25 11.6668 6.25H23.7502V13.5784C23.7502 14.2688 24.3098 14.8284 25.0002 14.8284H30.4168V31.6667C30.4168 32.8173 29.4841 33.75 28.3335 33.75H11.6668C10.5162 33.75 9.5835 32.8173 9.5835 31.6667V8.33333Z"
+              fill="#041628"
+            />
+          </svg>
+        {{ $t("downloadMethods") }}
+      </a>
+    </div>
+  </div>
+</template>
+
+<script>
+import Seismic from './seismic.vue';
+import electrical from './electrical.vue';
+import magnetic from './magnetic.vue';
+import gravity from './gravity.vue';
+import seismologic from './seismologic.vue';
+import {useGuestStore} from "@/stores/guest.js";
+import {computed} from "vue";
+export default {
+  components : {
+    Seismic,
+    electrical,
+    magnetic,
+    gravity,
+    seismologic
+  },
+  props: {
+    color: {
+      type: String,
+    },
+  },
+  setup(){
+    const guestStore = useGuestStore();
+    let currentCourse = computed(() => guestStore.currentCourse);
+    return {
+      currentCourse
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+.otchots {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  h3 {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    /* or 125% */
+
+    color: #00356b;
+    margin-bottom: 40px;
+  }
+  .courses {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -17px;
+  }
+  .download {
+    display: flex;
+    align-items: center;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 150%;
+    margin-top: 100px;
+    /* identical to box height, or 36px */
+
+    text-decoration-line: underline;
+
+    color: #00356b;
+    svg {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      margin-left: 5px;
+      margin-right: 10px;
+    }
+  }
+}
+</style>

@@ -1,0 +1,60 @@
+
+@import 'main_content';
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+ol, ul {
+  padding-left: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.types {
+  .swiper-wrapper {
+    padding-left: 135px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .types .swiper-wrapper {
+    padding-left: 110px;
+  }
+}
+
+.btm-warning {
+  background-color: #EDD70F;
+
+  span {
+    color: white;
+  }
+}
+
+.btm-danger {
+  background-color: #FF0000;
+
+  span {
+    color: white;
+  }
+}
+
+.btm-default {
+  border: 1px solid #00356B;
+}
+
+.btm-success {
+
+  background-color: #35B34A;
+
+  span {
+    color: white;
+  }
+}
