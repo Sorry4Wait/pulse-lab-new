@@ -1,2 +1,6 @@
 # Vue 3 + Vite + Tailwind
-# Node JS 16+
+
+
+## Recommended
+
+- [NodeJs](https://nodejs.org/en) + 
