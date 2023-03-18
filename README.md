@@ -3,4 +3,10 @@
 
 ## Recommended
 
-- [NodeJs](https://nodejs.org/en) + 
+- [NodeJs](https://nodejs.org/en)
+
+# Commands
+
+npm install
+
+npm run dev
